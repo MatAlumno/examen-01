@@ -1,0 +1,7 @@
+def intersect(arr1,arr2):
+    res = []
+    for n in arr1:
+        if n in arr2 and n not in res:
+            res.append(n)
+    return(res)
+print(intersect([1,2,3,4,5,3,8,6],[3,4,5,6,7,4,8,8]))
