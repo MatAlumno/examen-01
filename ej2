@@ -1,0 +1,24 @@
+print('Bienvenido usuario')
+subList = input('Ingrese la cantidad de sublistas: ')
+while int(subList) < 1:
+    print('ERROR')
+    subList = input('Ingrese la cantidad de sublistas: ')
+matrix = []
+print('Para parar agregar numeros, ingrese -1 ')
+for j in range(int(subList)):
+    matrix.append([])
+    while -1 not in matrix[j]:
+        matrix[j].append(int(input(f'Ingresa numero para la sublista {j} : ')))
+    del matrix[j][len(matrix[j])-1]
+print(f'Tu lista es : {matrix}')
+def uniqueValues(mtr):
+    res = []
+    for num in mtr[0]:
+        comprovar = 0
+        for l in range(int(subList)):
+            if num in mtr[l]:
+                comprovar += 1
+        if comprovar == int(subList):
+            res.append(num)
+    return(res)
+print(uniqueValues(matrix))
